@@ -60,6 +60,7 @@ const Post = ({ post }) => {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["posts"] });
+      queryClient.invalidateQueries({ queryKey: ["authUser"] });
       toast.success("Comment added successfully");
     },
     onError: (err) => {
@@ -74,6 +75,7 @@ const Post = ({ post }) => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["posts"] });
       queryClient.invalidateQueries({ queryKey: ["post", postId] });
+      queryClient.invalidateQueries({ queryKey: ["authUser"] });
     },
   });
 

@@ -20,7 +20,6 @@ const PostPage = () => {
       }
     },
   });
-  console.log(authUser.name + "888");
 
   const { data: post, isLoading } = useQuery({
     queryKey: ["post", postId],
